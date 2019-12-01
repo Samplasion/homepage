@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+// Set your brand colors
+$samplasion: #c44040;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $samplasion;
+$link: $samplasion;
+
+$footer-padding: 3rem 1.5rem 3rem;
+
+$bump-duration: 3.5s;
+$bump-distance: 15px;
+
+.is-horizontal-center {
+  justify-content: center;
+}
+
+#avatar-icon {
+    animation: bump $bump-duration ease-in-out infinite;
+}
+
+@keyframes bump {
+    0% {
+        margin-top: 0px;
+        margin-bottom: $bump-distance;
+    }
+    50% {
+        margin-top: $bump-distance;
+        margin-bottom: 0px;
+    }
+    100% {
+        margin-top: 0px;
+        margin-bottom: $bump-distance;
+    }
+}
+
+// Import only what you need from Bulma
+@import "./bulma.sass";

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Samplasion</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="js/scripts.js"></script>
+</head>
+
+<body>
+    <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body has-text-centered">
+            <figure class="image container is-128x128" id="avatar-icon">
+                <img class="is-rounded" src="favicon.png">
+            </figure> <br /><br />
+            <h1 class="title">
+                Samplasion
+            </h1>
+            <h2 class="subtitle">
+                I'm an aspirant developer.
+            </h2>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">About me</h1>
+            <h2 class="subtitle">
+                I'm a young developer from Italy. I'm the creator of
+                <a href="https://yamamura.xyz/">Yamamura</a>, a highly customizable Discord bot.
+                I also have a blog; you can find it at
+                <a href="https://blog.samplasion.js.org">Samplasion's Blog</a>.
+            </h2>
+        </div>
+    </section>
+
+    <section class="section" id="app">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <article class="panel is-primary">
+                        <p class="panel-heading">
+                            Projects
+                        </p>
+                        <!--p class="panel-tabs">
+                            <a class="is-active">All</a>
+                            <a>Public</a>
+                            <a>Private</a>
+                            <a>Sources</a>
+                            <a>Forks</a>
+                        </p-->
+                        <div class="panel-block">
+                            <p class="control has-icons-left">
+                                <input id="reposearch" v-model="search" class="input is-primary" type="text"
+                                    placeholder="Search">
+                                <span class="icon is-left">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <repo-item v-for="item in repoList" v-bind:repo="item" v-bind:id="repoList.indexOf(item)"
+                            class="repo"></repo-item>
+                    </article>
+                </div>
+                <div class="column">
+                    <article class="panel is-primary">
+                        <p class="panel-heading">
+                            The languages I know
+                        </p>
+                        <lang-progress v-for="lang in langList" v-bind:lang="lang" v-bind:id="langList.indexOf(lang)"
+                                class="lang"></lang-progress>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="app2">
+        <div class="content has-text-centered">
+            <strong>Samplasion</strong>'s portfolio page.
+            © {{currentYear}} Samplasion.
+        </div>
+    </footer>
+</body>
+
+</html>
