@@ -75,10 +75,10 @@ var app = new Vue({
                 name: "PHP",
                 value: 2
             },
-	    {
-		name: "Ruby",
-		value: 5
-	    },"
+            {
+                name: "Ruby",
+                value: 5
+            },
         ].sort((a, b) => b.value - a.value)
     }
 })
