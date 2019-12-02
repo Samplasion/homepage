@@ -35,7 +35,12 @@ var app = new Vue({
             },
             {
                 name: "repo",
-                href: "https://github.com/samplasion/repo",
+                href: "https://github.com/Samplasion/repo",
+                type: "fa-book"
+            },
+            {
+                name: "list-array",
+                href: "https://github.com/Samplasion/list-array",
                 type: "fa-book"
             },
             {
@@ -47,7 +52,7 @@ var app = new Vue({
                 name: "jacobjordan94/mario-maker",
                 href: "https://github.com/jacobjordan94/mario-maker",
                 type: "fa-code-branch"
-            }
+            },
         ],
         langList: [
             {
@@ -55,14 +60,26 @@ var app = new Vue({
                 value: 80
             },
             {
+                name: "Objective-C",
+                value: 25
+            },
+            {
+                name: "Swift",
+                value: 26
+            },
+            {
                 name: "Python",
                 value: 15
             },
-        ]
+            {
+                name: "PHP",
+                value: 2
+            },
+        ].sort((a, b) => b.value - a.value)
     }
 })
 
-document.querySelector("#reposearch").onkeyup = function() {
+document.querySelector("#reposearch").onkeyup = function () {
     console.log(1)
     var self = this;
     Array.from(document.querySelectorAll(".repo").values()).forEach(el => {
@@ -80,3 +97,12 @@ var app2 = new Vue({
         currentYear: new Date().getFullYear() == 2019 ? "2019" : "2019-" + new Date().getFullYear()
     }
 })
+
+var n = (Math.random());
+console.log(n);
+if (n < 0.33)
+    document.querySelector("#avatar-icon").classList.add("bump")
+else if (n < 0.66)
+    document.querySelector("#avatar-icon").classList.add("ondulate")
+else
+    document.querySelector("#avatar-icon").classList.add("both")

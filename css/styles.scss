@@ -3,6 +3,13 @@
 // Import a Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
 // Set your brand colors
 $samplasion: #c44040;
 
@@ -15,28 +22,50 @@ $footer-padding: 3rem 1.5rem 3rem;
 
 $bump-duration: 3.5s;
 $bump-distance: 15px;
+$rotation-duration: $bump-duration * 2;
+$rotation-radius: 5deg;
 
 .is-horizontal-center {
   justify-content: center;
 }
 
 #avatar-icon {
+  &.bump {
     animation: bump $bump-duration ease-in-out infinite;
+  }
+  &.ondulate {
+    animation: ondulate $rotation-duration ease-in-out infinite;
+  }
+  &.both {
+    animation: bump $bump-duration ease-in-out infinite, ondulate $rotation-duration ease-in-out infinite;
+  }
 }
 
 @keyframes bump {
-    0% {
-        margin-top: 0px;
-        margin-bottom: $bump-distance;
-    }
-    50% {
-        margin-top: $bump-distance;
-        margin-bottom: 0px;
-    }
-    100% {
-        margin-top: 0px;
-        margin-bottom: $bump-distance;
-    }
+  0% {
+    margin-top: 0px;
+    margin-bottom: $bump-distance;
+  }
+  50% {
+    margin-top: $bump-distance;
+    margin-bottom: 0px;
+  }
+  100% {
+    margin-top: 0px;
+    margin-bottom: $bump-distance;
+  }
+}
+
+@keyframes ondulate {
+  0% {
+    transform: rotateZ(-$rotation-radius);
+  }
+  50% {
+    transform: rotateZ($rotation-radius);
+  }
+  100% {
+    transform: rotateZ(-$rotation-radius);
+  }
 }
 
 // Import only what you need from Bulma
