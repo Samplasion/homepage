@@ -29,9 +29,9 @@ var app = new Vue({
         search: "",
         repoList: [
             {
-                name: "yamamura-discord-bot",
+                name: "yamamura1/yamamura-discord-bot",
                 href: "https://gitlab.com/yamamura1/yamamura-discord-bot",
-                type: "fa-book"
+                type: "fa-code-branch"
             },
             {
                 name: "repo",
@@ -79,7 +79,8 @@ var app = new Vue({
                 name: "Ruby",
                 value: 5
             }
-        ].sort((a, b) => b.value - a.value)
+        ].sort((a, b) => b.value - a.value),
+        currentYear: new Date().getFullYear() == 2019 ? "2019" : "2019-" + new Date().getFullYear()
     }
 })
 
@@ -95,18 +96,11 @@ document.querySelector("#reposearch").onkeyup = function () {
     })
 }
 
-var app2 = new Vue({
-    el: "#app2",
-    data: {
-        currentYear: new Date().getFullYear() == 2019 ? "2019" : "2019-" + new Date().getFullYear()
-    }
-})
-
 var n = (Math.random());
 console.log(n);
-if (n < 0.33)
+if (n < 1/3)
     document.querySelector("#avatar-icon").classList.add("bump")
-else if (n < 0.66)
+else if (n < 2/3)
     document.querySelector("#avatar-icon").classList.add("ondulate")
 else
     document.querySelector("#avatar-icon").classList.add("both")

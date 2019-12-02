@@ -3,13 +3,6 @@
 // Import a Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
-@function randomNum($min, $max) {
-  $rand: random();
-  $randomNum: $min + floor($rand * (($max - $min) + 1));
-
-  @return $randomNum;
-}
-
 // Set your brand colors
 $samplasion: #c44040;
 
@@ -24,6 +17,9 @@ $bump-duration: 3.5s;
 $bump-distance: 15px;
 $rotation-duration: $bump-duration * 2;
 $rotation-radius: 5deg;
+
+$incline-radius: 5deg;
+$incline-duration: .5s;
 
 .is-horizontal-center {
   justify-content: center;
@@ -66,6 +62,32 @@ $rotation-radius: 5deg;
   100% {
     transform: rotateZ(-$rotation-radius);
   }
+}
+
+.incline-cw {
+    transform: rotateZ(0);
+    transition: transform $incline-duration ease;
+
+    &:hover {
+        transform: rotateZ($incline-radius);
+    }
+}
+
+.incline-ccw {
+    transform: rotateZ(0);
+    transition: transform $incline-duration ease;
+
+    &:hover {
+        transform: rotateZ(-$incline-radius);
+    }
+}
+
+a {
+    transition: text-shadow $incline-duration ease;
+    
+    &:hover {
+        text-shadow: #030303 0rem 0.3rem 0.5rem;
+    }
 }
 
 // Import only what you need from Bulma
