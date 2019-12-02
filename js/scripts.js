@@ -90,7 +90,7 @@ document.querySelector("#reposearch").onkeyup = function () {
     Array.from(document.querySelectorAll(".repo").values()).forEach(el => {
         console.log(el)
         if (el.innerText.includes(self.value))
-            el.style = `display: block`
+            el.style = `display: flex`
         else
             el.style = `display: none`
     })
