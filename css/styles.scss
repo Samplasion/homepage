@@ -3,23 +3,7 @@
 // Import a Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
-// Set your brand colors
-$samplasion: #c44040;
-
-// Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-$primary: $samplasion;
-$link: $samplasion;
-
-$footer-padding: 3rem 1.5rem 3rem;
-
-$bump-duration: 3.5s;
-$bump-distance: 15px;
-$rotation-duration: $bump-duration * 2;
-$rotation-radius: 5deg;
-
-$incline-radius: 5deg;
-$incline-duration: .5s;
+@import 'variables.scss';
 
 .is-horizontal-center {
   justify-content: center;
@@ -88,6 +72,16 @@ a {
     &:hover {
         text-shadow: #030303 0rem 0.3rem 0.5rem; 
     }
+}
+
+.list-maxed-y {
+    max-height: $list-maxed-height;
+    overflow-y: scroll;
+}
+
+.list-maxed-x {
+    max-width: $list-maxed-width;
+    overflow-y: scroll;
 }
 
 // Import only what you need from Bulma

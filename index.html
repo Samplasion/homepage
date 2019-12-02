@@ -109,8 +109,10 @@
                                     </span>
                                 </p>
                             </div>
-                            <repo-item v-for="item in repoList" v-bind:repo="item" v-bind:id="repoList.indexOf(item)"
-                                class="repo"></repo-item>
+                            <div class="list-maxed-y">
+                                <repo-item v-for="item in repoList" v-bind:repo="item"
+                                    v-bind:id="repoList.indexOf(item)" class="repo"></repo-item>
+                            </div>
                         </article>
                     </div>
                     <div class="column">

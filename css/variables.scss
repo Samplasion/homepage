@@ -1,0 +1,20 @@
+// Set your brand colors
+$samplasion: #c44040;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $samplasion;
+$link: $samplasion;
+
+$footer-padding: 3rem 1.5rem 3rem;
+
+$bump-duration: 3.5s;
+$bump-distance: 15px;
+$rotation-duration: $bump-duration * 2;
+$rotation-radius: 5deg;
+
+$incline-radius: 5deg;
+$incline-duration: .5s;
+
+$list-maxed-height: 150px;
+$list-maxed-width: 0;
