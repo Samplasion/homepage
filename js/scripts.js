@@ -26,7 +26,7 @@ Vue.component('lang-progress', {
 var app = new Vue({
     el: "#app",
     data: {
-        search: "",
+        search: "", 
         repoList: [
             {
                 name: "yamamura1/yamamura-discord-bot",
