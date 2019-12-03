@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script defer src="js/scripts.js"></script>
+    <script defer src="js/bulma/bulma.js"></script>
 
     <style>
         .hero.is-medium {
@@ -75,31 +76,12 @@
 
         <section class="section">
             <div class="container">
-                <h1 class="title">About me</h1>
-                <h2 class="subtitle">
-                    I'm a young developer from Italy, and I'm the co-creator of
-                    <a href="https://yamamura.xyz/">Yamamura</a>, a highly customizable Discord bot.
-                    I also have a blog; you can find it at
-                    <a href="https://blog.samplasion.js.org">Samplasion's Blog</a>.
-                </h2>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
                 <div class="columns">
                     <div class="column incline-ccw">
                         <article class="panel is-primary">
                             <p class="panel-heading">
                                 Projects
                             </p>
-                            <!--p class="panel-tabs">
-                                <a class="is-active">All</a>
-                                <a>Public</a>
-                                <a>Private</a>
-                                <a>Sources</a>
-                                <a>Forks</a>
-                            </p-->
                             <div class="panel-block">
                                 <p class="control has-icons-left">
                                     <input id="reposearch" v-model="search" class="input is-primary" type="text"
@@ -117,7 +99,7 @@
                     </div>
                     <div class="column">
                         <p class="subtitle">
-                            Here you can find a list of all the importand projects I had an impact on.
+                            Here you can find a list of all the importand projects I've had an impact on.
                             The book icon means that the project is under my own Git account (i.e. I made
                             it or I forked it). The branch icon means that I am part of the project's
                             development team.
@@ -149,6 +131,21 @@
                                 v-bind:id="langList.indexOf(lang)" class="lang"></lang-progress>
                         </article>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h1 class="title">About me</h1>
+                <p class="subtitle">
+                    I'm a young developer from Italy, and I'm the co-creator of
+                    <a href="https://yamamura.xyz/">Yamamura</a>, a highly customizable Discord bot.
+                    I also have a blog; you can find it at
+                    <a href="https://blog.samplasion.js.org">Samplasion's Blog</a>.
+                </p>
+                <div class="level-right" style="padding-right: 7.5%;">
+                    <a class="level-item button is-primary" href="about/index.html"><strong>About me -></strong></a>
                 </div>
             </div>
         </section>

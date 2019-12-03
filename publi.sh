@@ -4,6 +4,7 @@ f() {
     echo '[BUILD]'
     rm css/*.min.css css/*.min.css.map
     ./compile.sh css
+    ./compile.sh js
     
     echo
     echo '[COMMIT]'

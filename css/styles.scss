@@ -3,85 +3,96 @@
 // Import a Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
-@import 'variables.scss';
+@import "variables.scss";
 
 .is-horizontal-center {
-  justify-content: center;
+	justify-content: center;
 }
 
 #avatar-icon {
-  &.bump {
-    animation: bump $bump-duration ease-in-out infinite;
-  }
-  &.ondulate {
-    animation: ondulate $rotation-duration ease-in-out infinite;
-  }
-  &.both {
-    animation: bump $bump-duration ease-in-out infinite, ondulate $rotation-duration ease-in-out infinite;
-  }
+	&.bump {
+		animation: bump $bump-duration infinite;
+	}
+	&.ondulate {
+		animation: ondulate $rotation-duration ease-in-out infinite;
+	}
+	&.both {
+		animation: bump $bump-duration infinite, ondulate $rotation-duration ease-in-out infinite;
+	}
 }
 
 @keyframes bump {
-  0% {
-    margin-top: 0px;
-    margin-bottom: $bump-distance;
-  }
-  50% {
-    margin-top: $bump-distance;
-    margin-bottom: 0px;
-  }
-  100% {
-    margin-top: 0px;
-    margin-bottom: $bump-distance;
-  }
+	0% {
+		margin-top: 0px;
+		margin-bottom: $bump-distance;
+	}
+	50% {
+		margin-top: $bump-distance;
+		margin-bottom: 0px;
+	}
+	100% {
+		margin-top: 0px;
+		margin-bottom: $bump-distance;
+	}
 }
 
 @keyframes ondulate {
-  0% {
-    transform: rotateZ(-$rotation-radius);
-  }
-  50% {
-    transform: rotateZ($rotation-radius);
-  }
-  100% {
-    transform: rotateZ(-$rotation-radius);
-  }
+	0% {
+		transform: rotateZ(-$rotation-radius);
+	}
+	50% {
+		transform: rotateZ($rotation-radius);
+	}
+	100% {
+		transform: rotateZ(-$rotation-radius);
+	}
 }
 
-.incline-cw {
-    transform: rotateZ(0);
-    transition: transform $incline-duration ease;
+@media all and (min-width: 1024px) {
+	.incline-cw {
+		transform: rotateZ(0);
+		transition: transform $incline-duration ease;
 
-    &:hover {
-        transform: rotateZ($incline-radius);
-    }
-}
+		&:hover {
+			transform: rotateZ($incline-radius);
+		}
+	}
 
-.incline-ccw {
-    transform: rotateZ(0);
-    transition: transform $incline-duration ease;
+	.incline-ccw {
+		transform: rotateZ(0);
+		transition: transform $incline-duration ease;
 
-    &:hover {
-        transform: rotateZ(-$incline-radius);
-    }
-}
+		&:hover {
+			transform: rotateZ(-$incline-radius);
+		}
+	}
 
-a {
-    transition: text-shadow $incline-duration ease;
-    
-    &:hover {
-        text-shadow: #030303 0rem 0.3rem 0.5rem; 
-    }
+	a:not(.button) {
+		transition: text-shadow $incline-duration ease;
+
+		&:hover {
+			text-shadow: #030303 0rem 0.3rem 0.5rem;
+		}
+	}
 }
 
 .list-maxed-y {
-    max-height: $list-maxed-height;
-    overflow-y: scroll;
+	max-height: $list-maxed-height;
+	overflow-y: scroll;
 }
 
 .list-maxed-x {
-    max-width: $list-maxed-width;
-    overflow-y: scroll;
+	max-width: $list-maxed-width;
+	overflow-y: scroll;
+}
+
+.carousel-item {
+    transition: opacity .25s ease, max-height .5s ease;
+    
+    &.w-h-0 {
+        max-height: 0;
+        opacity: 0;
+    }
 }
 
 // Import only what you need from Bulma
