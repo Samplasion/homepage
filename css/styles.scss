@@ -80,6 +80,14 @@
 	max-height: $list-maxed-height;
 	overflow-y: scroll;
 }
+.list-maxed-y-2 {
+	max-height: $list-maxed-height*2;
+	overflow-y: scroll;
+}
+.list-maxed-y-3 {
+	max-height: $list-maxed-height*3;
+	overflow-y: scroll;
+}
 
 .list-maxed-x {
 	max-width: $list-maxed-width;

@@ -27,21 +27,6 @@ app = new Vue(
 				type: 'fa-code-branch'
 			}
 			{
-				name: 'repo'
-				href: 'https://github.com/Samplasion/repo'
-				type: 'fa-book'
-			}
-			{
-				name: 'list-array'
-				href: 'https://github.com/Samplasion/list-array'
-				type: 'fa-book'
-			}
-			{
-				name: '7heaven'
-				href: 'https://github.com/Samplasion/7heaven'
-				type: 'fa-book'
-			}
-			{
 				name: 'jacobjordan94/mario-maker'
 				href: 'https://github.com/jacobjordan94/mario-maker'
 				type: 'fa-code-branch'
@@ -97,3 +82,30 @@ else if n < 2 / 3
 	document.querySelector('#avatar-icon').classList.add 'ondulate'
 else
 	document.querySelector('#avatar-icon').classList.add 'both'
+
+# Set up our HTTP request
+xhr = new XMLHttpRequest
+# Setup our listener to process completed requests
+
+xhr.onload = ->
+  # Process our return data
+  if xhr.status >= 200 and xhr.status < 300
+    # What do when the request is successful
+    # console.log xhr
+    data = JSON.parse xhr.response
+    # console.log data
+    app.repoList = data.map((repo) -> {name: repo.name, href: repo.html_url, desc: repo.description, type: "fa-book"}).sort((a, b) -> a.name.localeCompare b.name).concat app.repoList if Array.isArray data
+  else
+    # What do when the request fails
+    # console.log 'The request failed!'
+  # Code that should run regardless of the request status
+  # console.log 'This always runs...'
+  return
+
+# Create and send a GET request
+# The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+# The second argument is the endpoint URL
+xhr.open 'GET', 'https://api.github.com/users/Samplasion/repos'
+xhr.send()
+
+# https://api.github.com/users/Samplasion/repos
