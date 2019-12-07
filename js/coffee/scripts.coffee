@@ -105,7 +105,7 @@ xhr.onload = ->
 # Create and send a GET request
 # The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 # The second argument is the endpoint URL
-xhr.open 'GET', 'https://api.github.com/users/Samplasion/repos'
+xhr.open 'GET', 'https://api.github.com/users/Samplasion/repos?per_page=100'
 xhr.send()
 
-# https://api.github.com/users/Samplasion/repos
+# https://api.github.com/users/Samplasion/repos?per_page=100

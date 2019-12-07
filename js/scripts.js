@@ -101,7 +101,7 @@
     }
   };
 
-  xhr.open('GET', 'https://api.github.com/users/Samplasion/repos');
+  xhr.open('GET', 'https://api.github.com/users/Samplasion/repos?per_page=100');
 
   xhr.send();
 
