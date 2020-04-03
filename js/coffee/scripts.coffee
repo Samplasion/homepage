@@ -96,8 +96,8 @@ xhr.onload = ->
     # console.log data
     app.repoList = data.map((repo) -> {name: repo.name, href: repo.html_url, desc: repo.description, type: "fa-book"}).sort((a, b) -> a.name.localeCompare b.name).concat app.repoList if Array.isArray data
     app.repoList = app.repoList.sort((a, b) ->
-			b.name.localeCompare a.value
-		)
+        b.name.localeCompare a.value
+    )
   else
     # What do when the request fails
     # console.log 'The request failed!'

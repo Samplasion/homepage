@@ -117,6 +117,9 @@
           return a.name.localeCompare(b.name);
         }).concat(app.repoList);
       }
+      app.repoList = app.repoList.sort(function(a, b) {
+        return b.name.localeCompare(a.value);
+      });
     } else {
 
     }
