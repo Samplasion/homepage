@@ -57,6 +57,10 @@ app = new Vue(
 				name: 'Ruby'
 				value: 5
 			}
+			{
+				name: 'Shell'
+				value: 2
+			}
 		].sort((a, b) ->
 			b.value - (a.value)
 		)

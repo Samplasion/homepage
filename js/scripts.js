@@ -60,6 +60,10 @@
         {
           name: 'Ruby',
           value: 5
+        },
+        {
+          name: 'Shell',
+          value: 2
         }
       ].sort(function(a, b) {
         return b.value - a.value;
