@@ -122,7 +122,7 @@
         }).concat(app.repoList);
       }
       app.repoList = app.repoList.sort(function(a, b) {
-        return a.name.localeCompare(b.value);
+        return a.name.localeCompare(b.name);
       });
     } else {
 

@@ -76,6 +76,21 @@
 	}
 }
 
+@media (prefers-color-scheme: dark) {
+	.panel-tabs, .panel-block {
+		// background-color: $dark-over;
+		// color: $dark-text;
+
+		&.is-active {
+		// 	color: $dark-text;
+		}
+
+		.panel-block:not(:last-child), .panel-tabs:not(:last-child) {
+			border-bottom: 1px solid $dark-border;
+		}
+	}
+}
+
 .list-maxed-y {
 	max-height: $list-maxed-height;
 	overflow-y: scroll;
@@ -109,10 +124,21 @@
 		color: $dark-text;
 	}
 
-	& .panel-tabs:not(:last-child), & .panel-block:not(:last-child) {
-		background-color: $dark;
-		border-bottom: 1px solid $dark-border;
+	& .panel-tabs, & .panel-block {
+		background-color: $dark-over;
 		color: $dark-text;
+
+		&.is-active {
+			color: $dark-text;
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $dark-border;
+		}
+	}
+
+	& a.panel-block.is-active:hover {
+		background-color: $dark-over-hover;
 	}
 
 	& .control {
@@ -123,7 +149,26 @@
 	& .title {
 		color: $dark-title;
 	}
+	& .subtitle {
+		color: $dark-subtitle;
+	}
+	
+	& a.navbar-item:focus, & a.navbar-item:focus-within, & a.navbar-item:hover, & a.navbar-item.is-active, & .navbar-link:focus, & .navbar-link:focus-within, & .navbar-link:hover, & .navbar-link.is-active {
+		background-color: $dark-over;
+	}
+
+	& .select select, & .textarea, & .input {
+		$progress-value-background-color: $dark-over;
+		background-color: $dark-over;
+		color: $dark-text
+	}
+
+	& progress,                          /* Firefox  */ 
+	& progress[role][aria-valuenow] {    /* Polyfill */
+		background: $dark-over-hover !important; /* !important is needed by the polyfill */
+	}
 }
 
 // Import only what you need from Bulma
 @import "./bulma.sass";
+@import "../node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";

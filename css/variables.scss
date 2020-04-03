@@ -3,8 +3,11 @@ $samplasion: #c44040;
 
 $dark: #262626;
 $dark-over: #2c2c2c;
+$dark-hover: $dark-over;
 $dark-border: #3c3c3c;
-$dark-text: #acacac;
+$dark-over-hover: $dark-border;
+$dark-text: #d8d8d8;
+$dark-subtitle: $dark-text;
 $dark-title: #ececec;
 
 // Update Bulma's global variables
