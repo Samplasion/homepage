@@ -118,7 +118,7 @@
         }).concat(app.repoList);
       }
       app.repoList = app.repoList.sort(function(a, b) {
-        return b.name.localeCompare(a.value);
+        return a.name.localeCompare(b.value);
       });
     } else {
 

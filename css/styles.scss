@@ -103,5 +103,27 @@
     }
 }
 
+.dark {
+	& body {
+		background-color: $dark;
+		color: $dark-text;
+	}
+
+	& .panel-tabs:not(:last-child), & .panel-block:not(:last-child) {
+		background-color: $dark;
+		border-bottom: 1px solid $dark-border;
+		color: $dark-text;
+	}
+
+	& .control {
+		background-color: $dark;
+		color: $dark-text;
+	}
+
+	& .title {
+		color: $dark-title;
+	}
+}
+
 // Import only what you need from Bulma
 @import "./bulma.sass";
