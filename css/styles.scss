@@ -84,9 +84,26 @@
 		&.is-active {
 		// 	color: $dark-text;
 		}
+	}
 
-		.panel-block:not(:last-child), .panel-tabs:not(:last-child) {
-			border-bottom: 1px solid $dark-border;
+	.panel-block:not(:last-child), .panel-tabs:not(:last-child) {
+		border-bottom: 1px solid $dark-border !important;
+	}
+
+	.panel-block.is-active {
+		border-left-color: $dark-border !important;
+	}
+
+	.timeline .timeline-item {
+		&::before {
+			background-color: $dark-border !important;
+		}
+		& .timeline-marker {
+			background-color: $dark-border !important;
+			border-color: $dark-border !important;
+		}
+		& .timeline-marker.is-warning.is-icon {
+			color: $dark-over;
 		}
 	}
 }
