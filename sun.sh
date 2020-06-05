@@ -14,7 +14,7 @@ do
 done
 
 # =========== CODE ============
-echo "SUN - Website Tester\n"
+echo "SUN - Website Tester"
 if [ ${OPEN} -lt 1 ]; then
     echo Compiles the required files.
 else 
