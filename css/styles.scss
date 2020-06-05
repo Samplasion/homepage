@@ -49,11 +49,13 @@
 }
 
 @media all and (min-width: 1024px) {
-	.incline-cw {
+	.incline article {
 		transform: rotateZ(0);
 		transition: transform $incline-duration ease;
+	}
 
-		&:hover {
+	.incline-cw {
+		&:hover article {
 			transform: rotateZ($incline-radius);
 		}
 	}
@@ -62,7 +64,7 @@
 		transform: rotateZ(0);
 		transition: transform $incline-duration ease;
 
-		&:hover {
+		&:hover article {
 			transform: rotateZ(-$incline-radius);
 		}
 	}
