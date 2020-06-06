@@ -7,9 +7,12 @@
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/slider.css">
 
-    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="js/slider.js"></script>
+    <script defer src="js/projects.js"></script>
     <script defer src="js/scripts.js"></script>
     <script defer src="js/bulma/bulma.js"></script>
 
@@ -88,7 +91,7 @@
                     I also have a blog; you can find it at
                     <a href="https://blog.samplasion.js.org">Samplasion's Blog</a>.
                 </p>
-                <div class="level-right" style="padding-right: 7.5%;">
+                <div class="level-right" id="aboutButton">
                     <a class="level-item button is-primary" href="/about/"><strong>More →</strong></a>
                 </div>
             </div>
@@ -129,31 +132,10 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column">
-                        <p class="subtitle">
-                            Here's a list of the programming languages I know.
-                            Next to each language, there's a meter, indicating the level of familiarity
-                            I have with that language. For example, my level of familiarity with
-                            {{langList[0].name}} is {{langList[0].value}}/100. The level of
-                            familiarity is determined by me empirically, meaning it's not the
-                            result of a test.
-                        </p>
-                    </div>
-                    <div class="column incline incline-cw">
-                        <article class="panel is-primary">
-                            <p class="panel-heading">
-                                The languages I know
-                            </p>
-                            <lang-progress v-for="lang in langList" v-bind:lang="lang"
-                                v-bind:id="langList.indexOf(lang)" class="lang"></lang-progress>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="container">
+            <h1 class="title">Some projects of mine</h1>
+        </div>
+        <project-list></project-list>
 
         <footer class="footer">
             <div class="content has-text-centered">

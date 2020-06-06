@@ -10,6 +10,7 @@
 }
 
 #avatar-icon {
+	
 	&.bump {
 		animation: bump $bump-duration infinite;
 	}
@@ -17,7 +18,7 @@
 		animation: ondulate $rotation-duration ease-in-out infinite;
 	}
 	&.both {
-		animation: bump $bump-duration infinite, ondulate $rotation-duration ease-in-out infinite;
+		animation: bump $bump-duration ease-in-out infinite, ondulate $rotation-duration ease-in-out infinite -0.875s;
 	}
 }
 
@@ -108,6 +109,22 @@
 			color: $dark-over;
 		}
 	}
+
+	.slider {
+		& .slider-next, & .slider-previous {
+			color: $dark-text;
+		}
+
+		& > ul > li {
+			&.active {
+				background-color: $dark-text !important;
+			}
+
+			&:not(.active) {
+				background-color: $dark-border !important;
+			}
+		}
+	}
 }
 
 .list-maxed-y {
@@ -188,6 +205,45 @@
 	}
 }
 
+.modal-content {
+	width: 100vw;
+	height: 100vh;
+	max-height: unset;
+
+	& p {
+		max-height: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		height: 100%;
+
+		& img {
+			object-fit: contain;
+		}
+	}
+}
+
+a.skip-link.screen-reader-text {
+	display: none;
+}
+
 // Import only what you need from Bulma
 @import "./bulma.sass";
 @import "../node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";
+
+@media all and (min-width: $tablet) {
+	#aboutButton {
+		padding-right: 7.5%;
+	}
+}
+
+@media all and (max-width: $tablet) {
+	#aboutButton {
+		padding-right: 0;
+	}
+
+	.columns.mobile-reverse {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
