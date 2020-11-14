@@ -229,7 +229,9 @@ a.skip-link.screen-reader-text {
 
 // Import only what you need from Bulma
 @import "./bulma.sass";
-@import "../node_modules/bulma-prefers-dark/bulma-prefers-dark.sass";
+@media screen and (prefers-color-scheme: dark) {
+    @import "bpd.scss";
+}
 
 @media all and (min-width: $tablet) {
 	#aboutButton {
